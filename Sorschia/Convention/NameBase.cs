@@ -1,4 +1,4 @@
-﻿namespace Sorschia
+﻿namespace Sorschia.Convention
 {
     public abstract class NameBase
     {
@@ -138,7 +138,7 @@
         {
             if (Equals(backingField, default(T)))
             {
-                throw new SorschiaNameBaseException($"Static property '{typeof(NameBase).FullName}.{propertyName}' was not set.");
+                throw new SorschiaConventionException($"Static property '{typeof(NameBase).FullName}.{propertyName}' was not set.");
             }
             else
             {
@@ -150,7 +150,7 @@
         {
             if (Equals(value, default(T)))
             {
-                throw new SorschiaNameBaseException($"Static property '{typeof(NameBase).FullName}.{propertyName}' cannot be set to its default value.");
+                throw new SorschiaConventionException($"Static property '{typeof(NameBase).FullName}.{propertyName}' cannot be set to its default value.");
             }
             else
             {

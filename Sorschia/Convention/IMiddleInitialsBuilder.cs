@@ -1,4 +1,4 @@
-﻿namespace Sorschia
+﻿namespace Sorschia.Convention
 {
     public interface IMiddleInitialsBuilder
     {

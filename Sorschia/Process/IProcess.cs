@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Sorschia.Processes
+namespace Sorschia.Process
 {
     public interface IProcess : IDisposable
     {

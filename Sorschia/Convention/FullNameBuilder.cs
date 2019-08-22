@@ -1,6 +1,6 @@
 ﻿using System.Text;
 
-namespace Sorschia
+namespace Sorschia.Convention
 {
     internal sealed class FullNameBuilder : NameBuilderBase, IFullNameBuilder
     {

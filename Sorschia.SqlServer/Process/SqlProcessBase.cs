@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Sorschia.Processes
+namespace Sorschia.Process
 {
     public abstract class SqlProcessBase
     {

@@ -2,7 +2,7 @@
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace Sorschia.Processes
+namespace Sorschia.Process
 {
     public interface IAsyncProcess : IDisposable
     {
