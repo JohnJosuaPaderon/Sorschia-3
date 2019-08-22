@@ -10,6 +10,6 @@
         /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <returns></returns>
-        T Get<T>();
+        T Get<T>(bool required = false);
     }
 }

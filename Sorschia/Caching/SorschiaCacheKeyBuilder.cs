@@ -6,16 +6,6 @@ namespace Sorschia.Caching
 {
     public class SorschiaCacheKeyBuilder
     {
-        public static SorschiaCacheKeyBuilder GetInstance(Type resultType = null)
-        {
-            return new SorschiaCacheKeyBuilder(resultType);
-        }
-
-        public static SorschiaCacheKeyBuilder GetInstance<T>()
-        {
-            return new SorschiaCacheKeyBuilder(typeof(T));
-        }
-
         public SorschiaCacheKeyBuilder(Type resultType = null)
         {
             if (resultType != null)
@@ -61,6 +51,16 @@ namespace Sorschia.Caching
 
                 return builder.ToString();
             }
+        }
+
+        public static SorschiaCacheKeyBuilder GetInstance(Type resultType = null)
+        {
+            return new SorschiaCacheKeyBuilder(resultType);
+        }
+
+        public static SorschiaCacheKeyBuilder GetInstance<T>()
+        {
+            return new SorschiaCacheKeyBuilder(typeof(T));
         }
     }
 }
