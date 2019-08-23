@@ -3,7 +3,7 @@
     public abstract class ProcessBase
     {
         private ISessionVariables _sessionVariables;
-        
+
         protected ISessionVariables SessionVariables
         {
             get

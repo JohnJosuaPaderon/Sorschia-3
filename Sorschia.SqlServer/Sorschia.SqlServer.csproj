@@ -3,6 +3,11 @@
   <PropertyGroup>
     <TargetFramework>netcoreapp2.2</TargetFramework>
     <RootNamespace>Sorschia</RootNamespace>
+    <PackageId>Sorschia3.SqlServer</PackageId>
+    <Version>0.1.0-pre</Version>
+    <Authors>John Josua R. Paderon</Authors>
+    <Company>Sorschia</Company>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
   </PropertyGroup>
 
   <ItemGroup>
