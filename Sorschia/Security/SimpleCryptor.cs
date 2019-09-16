@@ -6,9 +6,9 @@ using System.Text;
 
 namespace Sorschia.Security
 {
-    public sealed class SimpleCryptor
+    internal sealed class SimpleCryptor : ICryptor
     {
-        internal SimpleCryptor()
+        public SimpleCryptor()
         {
             _keySize = 16;
             _derivationIterations = 10_000;

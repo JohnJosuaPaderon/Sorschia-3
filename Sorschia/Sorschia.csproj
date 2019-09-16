@@ -2,10 +2,13 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
-    <Version>0.1.0-pre</Version>
+    <Version>0.1.0-pre3</Version>
     <PackageId>Sorschia3</PackageId>
     <Authors>John Josua R. Paderon</Authors>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <PackageReleaseNotes></PackageReleaseNotes>
+    <Description>Sorschia Framework 3 Version 0.1.0 Preview 3 - Core Library</Description>
+    <Company>Sorschia</Company>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">

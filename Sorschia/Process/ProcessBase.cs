@@ -16,5 +16,9 @@
                 return _sessionVariables;
             }
         }
+
+        public virtual void Dispose()
+        {
+        }
     }
 }

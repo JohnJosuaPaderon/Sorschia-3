@@ -5,8 +5,9 @@
     <PackageId>Sorschia3.Dependency</PackageId>
     <Authors>John Josua R. Paderon</Authors>
     <Company>Sorschia</Company>
-    <Version>0.1.0-pre</Version>
+    <Version>0.1.0-pre3</Version>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <Description>Sorschia Framework 3 Version 0.1.0 Preview 3 - Dependency Injection for integrating Core Library</Description>
   </PropertyGroup>
 
   <ItemGroup>

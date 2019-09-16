@@ -10,19 +10,29 @@ namespace Sorschia.Process
         {
             return new SqlConnection(ConnectionStringProvider[connectionStringKey ?? DEFAULT_CONNECTION_STRING_KEY]);
         }
-
-        protected SqlConnection OpenConnection(string connectionStringKey = null)
+        
+        protected SqlConnection OpenConnection(string connectionStringKey)
         {
             var connection = InitializeConnection(connectionStringKey);
             connection.Open();
             return connection;
         }
 
-        protected async Task<SqlConnection> OpenConnectionAsync(string connectionStringKey = null, CancellationToken cancellationToken = default(CancellationToken))
+        protected SqlConnection OpenConnection()
+        {
+            return OpenConnection(null);
+        }
+
+        protected async Task<SqlConnection> OpenConnectionAsync(string connectionStringKey, CancellationToken cancellationToken = default(CancellationToken))
         {
             var connection = InitializeConnection(connectionStringKey);
             await connection.OpenAsync(cancellationToken);
             return connection;
+        }
+
+        protected Task<SqlConnection> OpenConnectionAsync(CancellationToken cancellationToken = default(CancellationToken))
+        {
+            return OpenConnectionAsync(null, cancellationToken);
         }
     }
 }
