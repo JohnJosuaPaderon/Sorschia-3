@@ -6,20 +6,9 @@ namespace Sorschia
 {
     public static class IServiceCollectionExtensions
     {
-        public static IServiceCollection AddSorschiaSessionVariables(this IServiceCollection instance, ServiceLifetime serviceLifetime)
+        public static IServiceCollection AddSorschia(this IServiceCollection instance, Action<SorschiaDependencySettings> configure = null)
         {
-            switch (serviceLifetime)
-            {
-                case ServiceLifetime.Singleton: return instance.AddSingleton<ISessionVariables, SessionVariables>();
-                case ServiceLifetime.Scoped: return instance.AddScoped<ISessionVariables, SessionVariables>();
-                case ServiceLifetime.Transient: return instance.AddTransient<ISessionVariables, SessionVariables>();
-                default: return instance;
-            }
-        }
-
-        public static IServiceCollection AddSorschia(this IServiceCollection instance, Action<SorschiaDependencyConfiguration> configure = null)
-        {
-            void AddSecurity(SorschiaDependencyConfiguration.SecurityConfiguration securityConfiguration)
+            void AddSecurity(SorschiaDependencySettings.SecuritySettings securityConfiguration)
             {
                 if (securityConfiguration.AddCryptor)
                 {
@@ -27,15 +16,32 @@ namespace Sorschia
                 }
             }
 
-            var configuration = new SorschiaDependencyConfiguration();
-            configure?.Invoke(configuration);
+            var settings = new SorschiaDependencySettings();
+            configure?.Invoke(settings);
 
-            if (configuration.AddDependencyProvider)
+            if (settings.AddDependencyProvider)
             {
                 instance.AddSingleton<IDependencyProvider, DependencyProvider>();
             }
 
-            AddSecurity(configuration.Security);
+            if (settings.AddSessionVariables)
+            {
+                switch (settings.SessionVariablesLifetime)
+                {
+                    case ServiceLifetime.Singleton:
+                        instance.AddSingleton<ISessionVariables, SessionVariables>();
+                        break;
+                    case ServiceLifetime.Scoped:
+                        instance.AddScoped<ISessionVariables, SessionVariables>();
+                        break;
+                    case ServiceLifetime.Transient:
+                        instance.AddTransient<ISessionVariables, SessionVariables>();
+                        break;
+                    default: throw new SorschiaException($"Unsupported value of type of '{typeof(ServiceLifetime).FullName}'");
+                }
+            }
+
+            AddSecurity(settings.Security);
 
             return instance;
         }

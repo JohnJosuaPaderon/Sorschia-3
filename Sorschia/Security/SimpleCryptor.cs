@@ -59,6 +59,28 @@ namespace Sorschia.Security
             }
         }
 
+        private void CompareSalt(byte[] left, byte[] right)
+        {
+            ValidateSalt(left);
+            ValidateSalt(right);
+
+            if (!left.SequenceEqual(right))
+            {
+                throw new SorschiaSecurityException("Salts mismatched");
+            }
+        }
+
+        private void CompareIv(byte[] left, byte[] right)
+        {
+            ValidateIv(left);
+            ValidateIv(right);
+
+            if (!left.SequenceEqual(right))
+            {
+                throw new SorschiaSecurityException("IVs mismatched");
+            }
+        }
+
         public string Encrypt(string plainText, string cryptoKey)
         {
             return Encrypt(plainText, cryptoKey, RandomBytes.Generate(_keySize), RandomBytes.Generate(_keySize));
@@ -110,6 +132,40 @@ namespace Sorschia.Security
                 using (var algorithm = InitializeAlgorithm())
                 {
                     using (var decryptor = algorithm.CreateDecryptor(GetCryptoKeyBytes(rfc2898DeriveBytes), iv))
+                    {
+                        using (var stream = new MemoryStream(bytes))
+                        {
+                            using (var cryptoStream = new CryptoStream(stream, decryptor, CryptoStreamMode.Read))
+                            {
+                                var resultBytes = new byte[bytes.Length];
+                                var resultBytesCount = cryptoStream.Read(resultBytes, 0, resultBytes.Length);
+                                return _encoding.GetString(resultBytes, 0, resultBytesCount);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        public string Decrypt(string cipherText, string cryptoKey, byte[] salt, byte[] iv)
+        {
+            ValidateCipherText(cipherText);
+            ValidateCryptoKey(cryptoKey);
+
+            var bytes = Convert.FromBase64String(cipherText);
+            var keySalt = bytes.Take(_keySize).ToArray();
+            var keyIv = bytes.Skip(_keySize).Take(_keySize).ToArray();
+
+            CompareSalt(keySalt, salt);
+            CompareIv(keyIv, iv);
+
+            bytes = bytes.Skip(_keySize * 2).Take(bytes.Length - (_keySize * 2)).ToArray();
+
+            using (var rfc2898DeriveBytes = GetCryptoKeyRfc2898DeriveBytes(cryptoKey, keySalt))
+            {
+                using (var algorithm = InitializeAlgorithm())
+                {
+                    using (var decryptor = algorithm.CreateDecryptor(GetCryptoKeyBytes(rfc2898DeriveBytes), keyIv))
                     {
                         using (var stream = new MemoryStream(bytes))
                         {
