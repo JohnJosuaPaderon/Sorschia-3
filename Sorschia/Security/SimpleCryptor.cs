@@ -117,6 +117,13 @@ namespace Sorschia.Security
             }
         }
 
+        public string Encrypt(string plainText, string cryptoKey, out byte[] salt, out byte[] iv)
+        {
+            salt = RandomBytes.Generate(_keySize);
+            iv = RandomBytes.Generate(_keySize);
+            return Encrypt(plainText, cryptoKey, salt, iv);
+        }
+
         public string Decrypt(string cipherText, string cryptoKey)
         {
             ValidateCipherText(cipherText);
