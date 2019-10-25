@@ -8,9 +8,9 @@ namespace Sorschia
     {
         public static IServiceCollection AddSorschia(this IServiceCollection instance, Action<SorschiaDependencySettings> configure = null)
         {
-            void AddSecurity(SorschiaDependencySettings.SecuritySettings securityConfiguration)
+            void AddSecurity(SorschiaDependencySettings.SecuritySettings securitySettings)
             {
-                if (securityConfiguration.AddCryptor)
+                if (securitySettings.AddCryptor)
                 {
                     instance.AddSingleton<ICryptor, SimpleCryptor>();
                 }

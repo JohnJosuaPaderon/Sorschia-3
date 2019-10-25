@@ -1,4 +1,5 @@
-﻿using System.Data.SqlClient;
+﻿using Sorschia.Data;
+using System.Data.SqlClient;
 using System.Threading;
 using System.Threading.Tasks;
 
@@ -6,6 +7,10 @@ namespace Sorschia.Process
 {
     public abstract class SqlProcessBase : DbProcessBase
     {
+        public SqlProcessBase(IConnectionStringProvider connectionStringProvider) : base(connectionStringProvider)
+        {
+        }
+
         private SqlConnection InitializeConnection(string connectionStringKey = null)
         {
             return new SqlConnection(ConnectionStringProvider[connectionStringKey ?? DEFAULT_CONNECTION_STRING_KEY]);
