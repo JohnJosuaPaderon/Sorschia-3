@@ -10,7 +10,10 @@ namespace Sorschia
         {
             void AddSecurity(SorschiaDependencySettings.SecuritySettings securitySettings)
             {
-                instance.RegisterSingleton<ICryptor, SimpleCryptor>();
+                if (securitySettings.AddCryptor)
+                {
+                    instance.RegisterSingleton<ICryptor, SimpleCryptor>();
+                }
             }
 
             var settings = new SorschiaDependencySettings();

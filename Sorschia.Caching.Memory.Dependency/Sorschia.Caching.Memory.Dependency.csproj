@@ -4,11 +4,12 @@
     <TargetFramework>netstandard2.0</TargetFramework>
     <RootNamespace>Sorschia</RootNamespace>
     <PackageId>Sorschia3.Caching.Memory.Dependency</PackageId>
-    <Version>0.1.0-pre3</Version>
+    <Version>0.2.0</Version>
     <Authors>John Josua R. Paderon</Authors>
     <Company>Sorschia</Company>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <Description>Sorschia Framework 3 Version 0.1.0 Preview 3 - Dependency Injection for Memory Caching</Description>
+    <Description>Sorschia Framework 3 Version 0.2.0 - Dependency Injection for Memory Caching</Description>
+    <PackageReleaseNotes>Bug fixes</PackageReleaseNotes>
   </PropertyGroup>
 
   <ItemGroup>

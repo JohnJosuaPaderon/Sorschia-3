@@ -5,14 +5,17 @@
     <RootNamespace>Sorschia</RootNamespace>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <PackageId>Sorschia3.Dependency.Prism</PackageId>
-    <Version>0.1.0-pre6</Version>
+    <Version>0.2.1</Version>
     <Authors>John Josua R. Paderon</Authors>
     <Company>Sorschia</Company>
-    <Description>Sorschia Framework 3 Version 0.1.0 Preview 6 - Dependency Injection for integrating Core Library</Description>
+    <Description>Sorschia Framework 3 Version 0.2.0 - Dependency Injection for integrating Core Library</Description>
+    <PackageReleaseNotes>Bug fixes</PackageReleaseNotes>
   </PropertyGroup>
 
   <ItemGroup>
     <PackageReference Include="Prism.Core" Version="7.2.0.1367" />
+    <PackageReference Include="Unity.Abstractions" Version="5.11.1" />
+    <PackageReference Include="Unity.Container" Version="5.11.1" />
   </ItemGroup>
 
   <ItemGroup>

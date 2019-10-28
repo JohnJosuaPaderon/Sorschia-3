@@ -1,23 +1,23 @@
-﻿using Prism.Ioc;
+﻿using Unity;
 
 namespace Sorschia
 {
     internal sealed class DependencyProvider : IDependencyProvider
     {
-        public DependencyProvider(IContainerProvider containerProvider)
+        public DependencyProvider(IUnityContainer container)
         {
-            _containerProvider = containerProvider;
+            _container = container;
         }
 
-        private readonly IContainerProvider _containerProvider;
+        private readonly IUnityContainer _container;
 
         public T Get<T>(bool required = false)
         {
-            var result = _containerProvider.Resolve<T>();
+            var result = _container.Resolve<T>();
 
             if (required && result == null)
             {
-                throw new SorschiaException($"Required dependency: '{typeof(T).FullName}'");
+                throw new SorschiaException($"Required: dependency: '{typeof(T).FullName}'");
             }
 
             return result;

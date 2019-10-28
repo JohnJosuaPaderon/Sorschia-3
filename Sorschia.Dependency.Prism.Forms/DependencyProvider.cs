@@ -1,5 +1,4 @@
-﻿using Prism.Ioc;
-using Unity;
+﻿using Unity;
 
 namespace Sorschia
 {
