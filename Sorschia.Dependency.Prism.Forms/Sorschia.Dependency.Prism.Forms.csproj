@@ -12,6 +12,10 @@
     <PackageReleaseNotes>Bug fixes</PackageReleaseNotes>
   </PropertyGroup>
 
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <NoWarn>1701;1702;CS0612</NoWarn>
+  </PropertyGroup>
+
   <ItemGroup>
     <PackageReference Include="Prism.Unity.Forms" Version="7.2.0.1367" />
   </ItemGroup>

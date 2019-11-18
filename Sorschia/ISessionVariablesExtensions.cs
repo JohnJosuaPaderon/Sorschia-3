@@ -1,5 +1,8 @@
-﻿namespace Sorschia
+﻿using System;
+
+namespace Sorschia
 {
+    [Obsolete]
     public static class ISessionVariablesExtensions
     {
         public const string DEVELOPMENTMODE = "DevelopmentMode";

@@ -17,6 +17,7 @@
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <NoWarn>1701;1702;CS0612</NoWarn>
   </PropertyGroup>
 
 </Project>

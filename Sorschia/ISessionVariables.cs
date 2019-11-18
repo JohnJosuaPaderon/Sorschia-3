@@ -1,5 +1,8 @@
-﻿namespace Sorschia
+﻿using System;
+
+namespace Sorschia
 {
+    [Obsolete]
     public interface ISessionVariables
     {
         object this[string key] { get; set; }

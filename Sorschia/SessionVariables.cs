@@ -1,7 +1,9 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
 namespace Sorschia
 {
+    [Obsolete]
     internal sealed class SessionVariables : ISessionVariables
     {
         private readonly Dictionary<string, object> _source = new Dictionary<string, object>();
@@ -10,42 +12,57 @@ namespace Sorschia
         {
             get
             {
-                return _source[key];
+                lock (_source)
+                {
+                    return _source[key];
+                }
             }
             set
             {
-                _source[key] = value;
+                lock (_source)
+                {
+                    _source[key] = value;
+                }
             }
         }
 
         public void AddOrUpdate(string key, object value)
         {
-            if (_source.ContainsKey(key))
+            lock (_source)
             {
-                _source[key] = value;
-            }
-            else
-            {
-                _source.Add(key, value);
+                if (_source.ContainsKey(key))
+                {
+                    _source[key] = value;
+                }
+                else
+                {
+                    _source.Add(key, value);
+                } 
             }
         }
 
         public bool TryGetValue(string key, out object result)
         {
-            return _source.TryGetValue(key, out result);
+            lock (_source)
+            {
+                return _source.TryGetValue(key, out result); 
+            }
         }
 
         public bool TryGetValue<T>(string key, out T result)
         {
-            result = default(T);
-
-            if (TryGetValue(key, out object objValue) && objValue is T value)
+            lock (_source)
             {
-                result = value;
-                return true;
-            }
+                result = default(T);
 
-            return false;
+                if (TryGetValue(key, out object objValue) && objValue is T value)
+                {
+                    result = value;
+                    return true;
+                }
+
+                return false; 
+            }
         }
     }
 }
