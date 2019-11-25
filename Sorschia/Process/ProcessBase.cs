@@ -1,9 +1,13 @@
-﻿namespace Sorschia.Process
+﻿using System;
+
+namespace Sorschia.Process
 {
     public abstract class ProcessBase
     {
+        [Obsolete]
         private ISessionVariables _sessionVariables;
 
+        [Obsolete]
         protected ISessionVariables SessionVariables
         {
             get

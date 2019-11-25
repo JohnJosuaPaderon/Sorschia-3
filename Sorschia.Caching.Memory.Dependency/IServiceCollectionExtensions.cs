@@ -8,6 +8,7 @@ namespace Sorschia
         public static IServiceCollection AddSorschiaCache(this IServiceCollection instance)
         {
             return instance
+                .AddMemoryCache()
                 .AddSingleton<ISorschiaCache, SorschiaCache>();
         }
     }

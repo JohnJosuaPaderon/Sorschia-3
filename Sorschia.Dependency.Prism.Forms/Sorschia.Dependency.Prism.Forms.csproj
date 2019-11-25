@@ -4,12 +4,12 @@
     <TargetFramework>netstandard2.0</TargetFramework>
     <RootNamespace>Sorschia</RootNamespace>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <Version>0.2.0</Version>
+    <Version>0.3.0</Version>
     <Authors>John Josua R. Paderon</Authors>
     <Company>Sorschia</Company>
-    <Description>Sorschia Framework 3 Version 0.2.0 - Dependency Injection for integrating Core Library</Description>
+    <Description>Sorschia Framework 3 Version 0.3.0 - Dependency Injection for integrating Core Library</Description>
     <PackageId>Sorschia3.Dependency.Prism.Forms</PackageId>
-    <PackageReleaseNotes>Bug fixes</PackageReleaseNotes>
+    <PackageReleaseNotes>Supports for .NET Core 3.1</PackageReleaseNotes>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
@@ -17,7 +17,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Prism.Unity.Forms" Version="7.2.0.1367" />
+    <PackageReference Include="Prism.Unity.Forms" Version="7.2.0.1422" />
   </ItemGroup>
 
   <ItemGroup>
