@@ -1,19 +1,19 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netcoreapp2.2</TargetFramework>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
     <RootNamespace>Sorschia</RootNamespace>
     <PackageId>Sorschia3.SqlServer</PackageId>
-    <Version>0.2.0</Version>
+    <Version>0.3.0</Version>
     <Authors>John Josua R. Paderon</Authors>
     <Company>Sorschia</Company>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <PackageReleaseNotes>Bug fixes</PackageReleaseNotes>
-    <Description>Sorschia Framework 3 Version 0.2.0 - Classes using SQL Server RDBMS.</Description>
+    <PackageReleaseNotes>Supports for .NET Core 3.1</PackageReleaseNotes>
+    <Description>Sorschia Framework 3 Version 0.3.0 - Classes using SQL Server RDBMS.</Description>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="System.Data.SqlClient" Version="4.6.1" />
+    <PackageReference Include="System.Data.SqlClient" Version="4.7.0" />
   </ItemGroup>
 
   <ItemGroup>

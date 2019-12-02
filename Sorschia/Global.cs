@@ -5,6 +5,8 @@ namespace Sorschia
     /// <summary>
     /// Exposes globally used variables
     /// </summary>
+    ///
+    [Obsolete]
     public static class Global
     {
         private static Func<IDependencyProvider> _initializeDependencyProvider;
