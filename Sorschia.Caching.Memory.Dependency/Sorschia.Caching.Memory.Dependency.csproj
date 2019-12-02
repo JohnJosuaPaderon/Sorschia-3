@@ -1,14 +1,14 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
     <RootNamespace>Sorschia</RootNamespace>
     <PackageId>Sorschia3.Caching.Memory.Dependency</PackageId>
-    <Version>0.2.0</Version>
+    <Version>0.2.1</Version>
     <Authors>John Josua R. Paderon</Authors>
     <Company>Sorschia</Company>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <Description>Sorschia Framework 3 Version 0.2.0 - Dependency Injection for Memory Caching</Description>
+    <Description>Sorschia Framework 3 Version 0.2.1 - Dependency Injection for Memory Caching</Description>
     <PackageReleaseNotes>Bug fixes</PackageReleaseNotes>
   </PropertyGroup>
 

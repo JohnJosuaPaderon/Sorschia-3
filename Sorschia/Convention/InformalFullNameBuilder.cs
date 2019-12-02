@@ -6,16 +6,26 @@ namespace Sorschia.Convention
     {
         public string Build(NameBase name)
         {
+            if (name == null)
+            {
+                throw new SorschiaConventionException($"Parameter '{nameof(name)}' cannot be null");
+            }
+
+            return Build(name.FirstName, name.MiddleInitials, name.LastName, name.NameExtension);
+        }
+
+        public string Build(string firstName, string middleInitials, string lastName, string nameExtension)
+        {
             var builder = new StringBuilder();
 
-            var hasFirstName = HasValue(name.FirstName);
-            var hasMiddleInitials = HasValue(name.MiddleInitials);
-            var hasLastName = HasValue(name.LastName);
-            var hasNameExtension = HasValue(name.NameExtension);
+            var hasFirstName = HasValue(firstName);
+            var hasMiddleInitials = HasValue(middleInitials);
+            var hasLastName = HasValue(lastName);
+            var hasNameExtension = HasValue(nameExtension);
 
             if (hasFirstName)
             {
-                builder.Append(name.FirstName.Trim());
+                builder.Append(firstName.Trim());
 
                 if (hasMiddleInitials || hasLastName || hasNameExtension)
                 {
@@ -25,7 +35,7 @@ namespace Sorschia.Convention
 
             if (hasMiddleInitials)
             {
-                builder.Append($"{name.MiddleInitials}.");
+                builder.Append($"{middleInitials}.");
 
                 if (hasLastName || hasNameExtension)
                 {
@@ -35,7 +45,7 @@ namespace Sorschia.Convention
 
             if (hasLastName)
             {
-                builder.Append(name.LastName.Trim());
+                builder.Append(lastName.Trim());
 
                 if (hasNameExtension)
                 {
@@ -45,7 +55,7 @@ namespace Sorschia.Convention
 
             if (hasNameExtension)
             {
-                builder.Append(name.NameExtension);
+                builder.Append(nameExtension);
             }
 
             return builder.ToString();

@@ -6,9 +6,9 @@ namespace Sorschia
 {
     public static class IServiceCollectionExtensions
     {
-        public static IServiceCollection AddSorschiaConfiguration(this IServiceCollection instance, Action<SorschiaConfigurationDependencySettings> configure = null)
+        public static IServiceCollection AddSorschiaConfiguration(this IServiceCollection instance, Action<DependencySettings> configure = null)
         {
-            var settings = new SorschiaConfigurationDependencySettings();
+            var settings = new DependencySettings();
             configure?.Invoke(settings);
 
             if (settings.AddConnectionStringProvider)

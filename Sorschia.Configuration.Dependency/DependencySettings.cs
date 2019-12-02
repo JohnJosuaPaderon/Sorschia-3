@@ -1,8 +1,8 @@
 ﻿namespace Sorschia
 {
-    public sealed class SorschiaConfigurationDependencySettings
+    public sealed class DependencySettings
     {
-        internal SorschiaConfigurationDependencySettings()
+        internal DependencySettings()
         {
         }
 

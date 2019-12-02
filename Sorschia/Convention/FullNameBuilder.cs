@@ -6,16 +6,26 @@ namespace Sorschia.Convention
     {
         public string Build(NameBase name)
         {
+            if (name == null)
+            {
+                throw new SorschiaConventionException($"Parameter '{nameof(name)}' cannot be null");
+            }
+
+            return Build(name.FirstName, name.MiddleName, name.LastName, name.NameExtension);
+        }
+
+        public string Build(string firstName, string middleName, string lastName, string nameExtension)
+        {
             var builder = new StringBuilder();
 
-            var hasFirstName = HasValue(name.FirstName);
-            var hasMiddleName = HasValue(name.MiddleName);
-            var hasLastName = HasValue(name.LastName);
-            var hasNameExtension = HasValue(name.NameExtension);
+            var hasFirstName = HasValue(firstName);
+            var hasMiddleName = HasValue(middleName);
+            var hasLastName = HasValue(lastName);
+            var hasNameExtension = HasValue(nameExtension);
 
             if (hasLastName)
             {
-                builder.Append(name.LastName.Trim());
+                builder.Append(lastName.Trim());
 
                 if (hasNameExtension)
                 {
@@ -29,7 +39,7 @@ namespace Sorschia.Convention
 
             if (hasNameExtension)
             {
-                builder.Append(name.NameExtension.Trim());
+                builder.Append(nameExtension.Trim());
 
                 if (hasFirstName || hasMiddleName)
                 {
@@ -39,7 +49,7 @@ namespace Sorschia.Convention
 
             if (hasFirstName)
             {
-                builder.Append(name.FirstName.Trim());
+                builder.Append(firstName.Trim());
 
                 if (hasMiddleName)
                 {
@@ -49,7 +59,7 @@ namespace Sorschia.Convention
 
             if (hasMiddleName)
             {
-                builder.Append(name.MiddleName.Trim());
+                builder.Append(middleName.Trim());
             }
 
             return builder.ToString();
