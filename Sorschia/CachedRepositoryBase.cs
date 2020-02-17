@@ -1,5 +1,6 @@
 ﻿using Newtonsoft.Json;
 using Sorschia.Caching;
+using System.ComponentModel;
 using System.Text;
 
 namespace Sorschia
@@ -35,6 +36,11 @@ namespace Sorschia
 
         protected string CreateCacheKey<TModel, TResult>(TModel model)
         {
+            return CreateCacheKey<TModel, TResult>(null, model);
+        }
+
+        protected string CreateCacheKey<TModel, TResult>(string flag, TModel model)
+        {
             var builder = new StringBuilder($"{typeof(TResult).FullName}@");
 
             if (Equals(model, default(TModel)))
@@ -44,6 +50,11 @@ namespace Sorschia
             else
             {
                 builder.Append(JsonConvert.SerializeObject(model, Formatting.None));
+            }
+
+            if (!string.IsNullOrWhiteSpace(flag))
+            {
+                builder.Append($"+{flag}");
             }
 
             return builder.ToString();

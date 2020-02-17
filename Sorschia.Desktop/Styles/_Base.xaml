@@ -1,0 +1,15 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="_Api.xaml"/>
+        <ResourceDictionary Source="_Border.xaml"/>
+        <ResourceDictionary Source="_Button.xaml"/>
+        <ResourceDictionary Source="_ColorZone.xaml"/>
+        <ResourceDictionary Source="_ComboBox.xaml"/>
+        <ResourceDictionary Source="_PasswordBox.xaml"/>
+        <ResourceDictionary Source="_Separator.xaml"/>
+        <ResourceDictionary Source="_TextBlock.xaml"/>
+        <ResourceDictionary Source="_TextBox.xaml"/>
+        <ResourceDictionary Source="_UserControl.xaml"/>
+        <ResourceDictionary Source="_Variables.xaml"/>
+    </ResourceDictionary.MergedDictionaries>
+</ResourceDictionary>

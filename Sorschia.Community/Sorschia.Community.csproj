@@ -9,6 +9,7 @@
     <Description>Sorschia Framework 3 Version 0.2.0 - Entities used for Community (Experimental)</Description>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <PackageReleaseNotes>Supports for .NET Core 3.1</PackageReleaseNotes>
+    <Copyright>Copyright (c) 2020 John Josua R. Paderon</Copyright>
   </PropertyGroup>
 
   <ItemGroup>

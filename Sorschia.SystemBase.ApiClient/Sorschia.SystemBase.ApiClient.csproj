@@ -1,20 +1,19 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
     <RootNamespace>Sorschia</RootNamespace>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <PackageId>Sorschia3.Prism.Extensions</PackageId>
+    <PackageId>Sorschia3.SystemBase.ApiClient</PackageId>
     <Version>0.3.0</Version>
     <Authors>John Josua R. Paderon</Authors>
     <Company>Sorschia</Company>
-    <Description>Sorschia Framework 3 Version 0.3.0 - Extension methods for Prism.Core</Description>
-    <PackageReleaseNotes>Supports for .NET Core 3.1</PackageReleaseNotes>
+    <Description>Sorschia Framework 3 Version 0.3.0 - API Client for SystemBase</Description>
     <Copyright>Copyright (c) 2020 John Josua R. Paderon</Copyright>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Prism.Core" Version="7.2.0.1422" />
+    <Folder Include="Security\" />
   </ItemGroup>
 
 </Project>

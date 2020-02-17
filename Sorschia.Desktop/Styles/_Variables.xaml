@@ -1,0 +1,25 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:system="clr-namespace:System;assembly=mscorlib">
+
+    <system:Double x:Key="ContentFontSize">12</system:Double>
+    <system:Double x:Key="DefaultSpace">8</system:Double>
+    <system:Double x:Key="CollectionItemIconHeight">25</system:Double>
+    <system:Double x:Key="CollectionItemIconWidth">25</system:Double>
+    <system:Double x:Key="ManagementOptionIconHeight">30</system:Double>
+    <system:Double x:Key="ManagementOptionIconWidth">30</system:Double>
+    <system:Double x:Key="CollectionManagementIconHeight">25</system:Double>
+    <system:Double x:Key="CollectionManagementIconWidth">25</system:Double>
+    <system:Double x:Key="DialogFooterIconHeight">30</system:Double>
+    <system:Double x:Key="DialogFooterIconWidth">30</system:Double>
+
+    <SolidColorBrush x:Key="ContentForeground">#444</SolidColorBrush>
+
+    <Thickness x:Key="DefaultMargin">8 8 8 8</Thickness>
+    <Thickness x:Key="DefaultMarginLT">8 8 0 0</Thickness>
+    <Thickness x:Key="DefaultMarginLR">8 0 8 0</Thickness>
+    <Thickness x:Key="DefaultMarginLRB">8 0 8 8</Thickness>
+    <Thickness x:Key="DefaultMarginLTR">8 8 8 0</Thickness>
+
+    <GridLength x:Key="DefaultGridSpace">8</GridLength>
+</ResourceDictionary>

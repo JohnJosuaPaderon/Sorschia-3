@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
@@ -10,6 +10,7 @@
     <Company>Sorschia</Company>
     <Description>Sorschia Framework 3 Version 0.3.0 - Integrates Sorschia3.Configuration into your project</Description>
     <PackageReleaseNotes>Supports for .NET Core 3.1</PackageReleaseNotes>
+    <Copyright>Copyright (c) 2020 John Josua R. Paderon</Copyright>
   </PropertyGroup>
 
   <ItemGroup>

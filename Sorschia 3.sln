@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.28307.329
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29519.87
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sorschia", "Sorschia\Sorschia.csproj", "{40CA9F65-A4B9-403A-A99D-023150DB8C31}"
 EndProject
@@ -26,6 +26,12 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sorschia.Caching.Memory.Dependency.Prism", "Sorschia.Caching.Memory.Dependency.Prism\Sorschia.Caching.Memory.Dependency.Prism.csproj", "{F100A705-FEE1-476B-B78C-D46AAFC08927}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sorschia.Prism.Extensions", "Sorschia.Prism.Extensions\Sorschia.Prism.Extensions.csproj", "{BC3A5321-63EA-4CD5-BF15-ECA7E902B744}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sorschia.Desktop", "Sorschia.Desktop\Sorschia.Desktop.csproj", "{22DD52B9-4F7A-4643-B782-3E069665E47C}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sorschia.SystemBase", "Sorschia.SystemBase\Sorschia.SystemBase.csproj", "{A8F1888E-7FAD-4BB0-BC9E-95496A8E78F3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sorschia.SystemBase.ApiClient", "Sorschia.SystemBase.ApiClient\Sorschia.SystemBase.ApiClient.csproj", "{1B4F6931-C639-45B4-A336-C0722B385AD8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -81,6 +87,18 @@ Global
 		{BC3A5321-63EA-4CD5-BF15-ECA7E902B744}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BC3A5321-63EA-4CD5-BF15-ECA7E902B744}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BC3A5321-63EA-4CD5-BF15-ECA7E902B744}.Release|Any CPU.Build.0 = Release|Any CPU
+		{22DD52B9-4F7A-4643-B782-3E069665E47C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{22DD52B9-4F7A-4643-B782-3E069665E47C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{22DD52B9-4F7A-4643-B782-3E069665E47C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{22DD52B9-4F7A-4643-B782-3E069665E47C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A8F1888E-7FAD-4BB0-BC9E-95496A8E78F3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A8F1888E-7FAD-4BB0-BC9E-95496A8E78F3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A8F1888E-7FAD-4BB0-BC9E-95496A8E78F3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A8F1888E-7FAD-4BB0-BC9E-95496A8E78F3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1B4F6931-C639-45B4-A336-C0722B385AD8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1B4F6931-C639-45B4-A336-C0722B385AD8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1B4F6931-C639-45B4-A336-C0722B385AD8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1B4F6931-C639-45B4-A336-C0722B385AD8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

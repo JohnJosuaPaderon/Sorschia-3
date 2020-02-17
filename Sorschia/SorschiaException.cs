@@ -5,20 +5,26 @@ namespace Sorschia
 {
     public class SorschiaException : Exception
     {
-        public SorschiaException()
+        public SorschiaException(bool viewSafeMessage = false)
         {
+            ViewSafeMessage = viewSafeMessage;
         }
 
-        public SorschiaException(string message) : base(message)
+        public SorschiaException(string message, bool viewSafeMessage = false) : base(message)
         {
+            ViewSafeMessage = viewSafeMessage;
         }
 
-        public SorschiaException(string message, Exception innerException) : base(message, innerException)
+        public SorschiaException(string message, Exception innerException, bool viewSafeMessage = false) : base(message, innerException)
         {
+            ViewSafeMessage = viewSafeMessage;
         }
 
-        protected SorschiaException(SerializationInfo info, StreamingContext context) : base(info, context)
+        protected SorschiaException(SerializationInfo info, StreamingContext context, bool viewSafeMessage = false) : base(info, context)
         {
+            ViewSafeMessage = viewSafeMessage;
         }
+
+        public bool ViewSafeMessage { get; set; }
     }
 }
